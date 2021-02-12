@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8-Bit-Computer
-Fri Feb 12 19:20:08 2021
+Fri Feb 12 21:02:32 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,8 +10,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Elapsed Time Per Partition
-  6. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -37,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Feb 12 19:20:08 2021          ;
+; Analysis & Synthesis Status        ; Failed - Fri Feb 12 21:02:32 2021          ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; 8-Bit-Computer                             ;
 ; Top-level Entity Name              ; 8-Bit-Computer                             ;
@@ -153,21 +152,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 
 
 +-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Feb 12 19:20:07 2021
+    Info: Processing started: Fri Feb 12 21:02:31 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8-Bit-Computer -c 8-Bit-Computer
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12018): Entity "And" will be ignored because it conflicts with Quartus II primitive name
@@ -180,12 +170,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file and16.b
     Info (12023): Found entity 1: And16
 Info (12021): Found 1 design units, including 1 entities, in source file 8-bit-computer.bdf
     Info (12023): Found entity 1: 8-Bit-Computer
+Warning (12090): Entity "Mux" obtained from "Mux.bdf" instead of from Quartus II megafunction library
+Info (12021): Found 1 design units, including 1 entities, in source file mux.bdf
+    Info (12023): Found entity 1: Mux
+Info (12021): Found 1 design units, including 1 entities, in source file dmux.bdf
+    Info (12023): Found entity 1: DMux
+Warning (12018): Entity "Xor" will be ignored because it conflicts with Quartus II primitive name
+Info (12021): Found 1 design units, including 1 entities, in source file xor.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file or16.bdf
+    Info (12023): Found entity 1: Or16
+Info (12021): Found 1 design units, including 1 entities, in source file or8way.bdf
+    Info (12023): Found entity 1: Or8Way
+Info (12021): Found 1 design units, including 1 entities, in source file not16.bdf
+    Info (12023): Found entity 1: Not16
+Info (12021): Found 1 design units, including 1 entities, in source file mux16.bdf
+    Info (12023): Found entity 1: Mux16
 Info (12127): Elaborating entity "8-Bit-Computer" for the top level hierarchy
-Info (12128): Elaborating entity "And16" for hierarchy "And16:inst"
+Warning (12158): Entity "8-Bit-Computer" contains only dangling pins
 Error (12061): Can't synthesize current design -- Top partition does not contain any logic
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 4 warnings
-    Error: Peak virtual memory: 4614 megabytes
-    Error: Processing ended: Fri Feb 12 19:20:08 2021
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 7 warnings
+    Error: Peak virtual memory: 4604 megabytes
+    Error: Processing ended: Fri Feb 12 21:02:32 2021
     Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
