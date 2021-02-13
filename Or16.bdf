@@ -23,7 +23,7 @@ applicable agreement for further details.
 	(input)
 	(rect 32 1696 200 1712)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "a[15..0]" (rect 5 0 43 12)(font "Arial" ))
+	(text "a[15..0]" (rect 5 0 42 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -39,7 +39,7 @@ applicable agreement for further details.
 	(input)
 	(rect 32 1728 200 1744)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "b[15..0]" (rect 5 0 43 12)(font "Arial" ))
+	(text "b[15..0]" (rect 5 0 42 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -69,8 +69,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 48 560 144)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst16" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -98,8 +98,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 152 560 248)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst17" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -127,8 +127,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 256 560 352)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst2" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst18" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -156,8 +156,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 360 560 456)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst3" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst19" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -185,8 +185,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 464 560 560)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst4" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst20" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -214,8 +214,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 568 560 664)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst5" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst21" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -243,8 +243,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 672 560 768)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst6" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst22" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -272,8 +272,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 776 560 872)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst7" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst23" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -301,8 +301,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 880 560 976)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst8" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst24" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -330,8 +330,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 984 560 1080)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst9" (rect 8 80 31 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst25" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -359,8 +359,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 1088 560 1184)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst10" (rect 8 80 37 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst26" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -388,8 +388,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 1192 560 1288)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst11" (rect 8 80 37 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst27" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -417,66 +417,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 1296 560 1392)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst12" (rect 8 80 37 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "a" (rect 0 0 7 14)(font "Arial" (font_size 8)))
-		(text "a" (rect 21 27 28 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "b" (rect 0 0 7 14)(font "Arial" (font_size 8)))
-		(text "b" (rect 21 43 28 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 96 32)
-		(output)
-		(text "out" (rect 0 0 17 14)(font "Arial" (font_size 8)))
-		(text "out" (rect 58 27 75 41)(font "Arial" (font_size 8)))
-		(line (pt 96 32)(pt 80 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 80 80))
-	)
-)
-(symbol
-	(rect 464 1400 560 1496)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst13" (rect 8 80 37 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "a" (rect 0 0 7 14)(font "Arial" (font_size 8)))
-		(text "a" (rect 21 27 28 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "b" (rect 0 0 7 14)(font "Arial" (font_size 8)))
-		(text "b" (rect 21 43 28 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 96 32)
-		(output)
-		(text "out" (rect 0 0 17 14)(font "Arial" (font_size 8)))
-		(text "out" (rect 58 27 75 41)(font "Arial" (font_size 8)))
-		(line (pt 96 32)(pt 80 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 80 80))
-	)
-)
-(symbol
-	(rect 464 1504 560 1600)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst14" (rect 8 80 37 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst28" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -504,8 +446,66 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 464 1608 560 1704)
-	(text "Or" (rect 5 0 19 14)(font "Arial" (font_size 8)))
-	(text "inst15" (rect 8 80 37 92)(font "Arial" ))
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst29" (rect 8 80 37 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "a" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "a" (rect 21 27 28 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "b" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "b" (rect 21 43 28 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 96 32)
+		(output)
+		(text "out" (rect 0 0 17 14)(font "Arial" (font_size 8)))
+		(text "out" (rect 58 27 75 41)(font "Arial" (font_size 8)))
+		(line (pt 96 32)(pt 80 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 80 80))
+	)
+)
+(symbol
+	(rect 464 1504 560 1600)
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst30" (rect 8 80 37 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "a" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "a" (rect 21 27 28 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "b" (rect 0 0 7 14)(font "Arial" (font_size 8)))
+		(text "b" (rect 21 43 28 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 96 32)
+		(output)
+		(text "out" (rect 0 0 17 14)(font "Arial" (font_size 8)))
+		(text "out" (rect 58 27 75 41)(font "Arial" (font_size 8)))
+		(line (pt 96 32)(pt 80 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 80 80))
+	)
+)
+(symbol
+	(rect 464 1400 560 1496)
+	(text "Or-primitive" (rect 5 0 69 14)(font "Arial" (font_size 8)))
+	(text "inst31" (rect 8 80 37 92)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)

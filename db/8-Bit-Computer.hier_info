@@ -1,3 +1,730 @@
-|8-Bit-Computer
+|8-Bit-Register
+Q0 <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+CLK => DFlipFlop:inst21.CLK
+CLK => DFlipFlop:inst22.CLK
+CLK => DFlipFlop:inst13.CLK
+CLK => DFlipFlop:inst41.CLK
+CLK => DFlipFlop:inst64.CLK
+CLK => DFlipFlop:inst32.CLK
+CLK => DFlipFlop:inst7.CLK
+CLK => DFlipFlop:inst8.CLK
+ReadEnable => Not-primitive:inst35.in
+ReadEnable => And-primitive:inst63.b
+ReadEnable => And-primitive:inst66.b
+ReadEnable => And-primitive:inst57.b
+ReadEnable => And-primitive:inst59.b
+ReadEnable => And-primitive:inst51.b
+ReadEnable => And-primitive:inst55.b
+ReadEnable => And-primitive:inst38.b
+ReadEnable => And-primitive:inst36.b
+D0 => And-primitive:inst63.a
+CLR => DFlipFlop:inst21.CLR
+CLR => DFlipFlop:inst22.CLR
+CLR => DFlipFlop:inst13.CLR
+CLR => DFlipFlop:inst41.CLR
+CLR => DFlipFlop:inst64.CLR
+CLR => DFlipFlop:inst32.CLR
+CLR => DFlipFlop:inst7.CLR
+CLR => DFlipFlop:inst8.CLR
+WriteEnable => inst31.OE
+WriteEnable => inst30.OE
+WriteEnable => inst29.OE
+WriteEnable => inst28.OE
+WriteEnable => inst27.OE
+WriteEnable => inst26.OE
+WriteEnable => inst9.OE
+WriteEnable => inst10.OE
+Q1 <= inst30.DB_MAX_OUTPUT_PORT_TYPE
+D1 => And-primitive:inst66.a
+Q2 <= inst29.DB_MAX_OUTPUT_PORT_TYPE
+D2 => And-primitive:inst57.a
+Q3 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+D3 => And-primitive:inst59.a
+Q4 <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+D4 => And-primitive:inst51.a
+Q5 <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+D5 => And-primitive:inst55.a
+Q6 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+D6 => And-primitive:inst38.a
+Q7 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+D7 => And-primitive:inst36.a
+
+
+|8-Bit-Register|DFlipFlop:inst21
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst60
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst62
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Not-primitive:inst35
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst63
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst61
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst65
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst66
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst52
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst56
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst57
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst53
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst58
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst59
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst47
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst50
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst51
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst48
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst54
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst55
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst39
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst38
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8
+Q <= Nand3-primitive:inst9.out
+SET => Not-primitive:inst16.in
+CLK => Nand3-primitive:inst11.b
+CLK => Nand3-primitive:inst13.b
+D => Nand3-primitive:inst14.b
+CLR => Not-primitive:inst15.in
+NotQ <= Nand3-primitive:inst10.out
+
+
+|8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst9
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Not-primitive:inst16
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst13
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst12
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst14
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst11
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Not-primitive:inst15
+out <= inst.DB_MAX_OUTPUT_PORT_TYPE
+in => inst.IN0
+in => inst.IN1
+
+
+|8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst10
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+c => inst2.IN0
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|Or-primitive:inst46
+out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+b => inst1.IN0
+b => inst1.IN1
+a => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst37
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
+
+
+|8-Bit-Register|And-primitive:inst36
+out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+b => inst.IN0
+a => inst.IN1
 
 
