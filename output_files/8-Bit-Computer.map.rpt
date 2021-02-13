@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8-Bit-Computer
-Sat Feb 13 01:02:53 2021
+Sat Feb 13 02:07:44 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -42,16 +42,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 13 01:02:53 2021      ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb 13 02:07:44 2021      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; 8-Bit-Computer                             ;
-; Top-level Entity Name              ; 8-Bit-Register                             ;
+; Top-level Entity Name              ; RamCell-16B                                ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 40                                         ;
-;     Total combinational functions  ; 40                                         ;
+; Total logic elements               ; 733                                        ;
+;     Total combinational functions  ; 733                                        ;
 ;     Dedicated logic registers      ; 0                                          ;
 ; Total registers                    ; 0                                          ;
-; Total pins                         ; 20                                         ;
+; Total pins                         ; 50                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -65,7 +65,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                                      ; 8-Bit-Register     ; 8-Bit-Computer     ;
+; Top-level entity name                                                      ; RamCell-16B        ; 8-Bit-Computer     ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -168,6 +168,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; And-primitive.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/And-primitive.bdf   ;         ;
 ; Or-primitive.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Or-primitive.bdf    ;         ;
 ; Not-primitive.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Not-primitive.bdf   ;         ;
+; RamCell-16B.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/RamCell-16B.bdf     ;         ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
 
 
@@ -176,105 +177,677 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 40        ;
+; Estimated Total logic elements              ; 733       ;
 ;                                             ;           ;
-; Total combinational functions               ; 40        ;
+; Total combinational functions               ; 733       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 32        ;
+;     -- 4 input functions                    ; 597       ;
 ;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 8         ;
+;     -- <=2 input functions                  ; 136       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 40        ;
+;     -- normal mode                          ; 733       ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
 ; Total registers                             ; 0         ;
 ;     -- Dedicated logic registers            ; 0         ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 20        ;
+; I/O pins                                    ; 50        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 24        ;
-; Total fan-out                               ; 180       ;
-; Average fan-out                             ; 2.25      ;
+; Maximum fan-out                             ; 384       ;
+; Total fan-out                               ; 2726      ;
+; Average fan-out                             ; 3.27      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
-; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Library Name ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
-; |8-Bit-Register                ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |8-Bit-Register                                         ; work         ;
-;    |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst13                        ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
-;    |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst21                        ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
-;    |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst22                        ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
-;    |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst32                        ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
-;    |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst41                        ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
-;    |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst64                        ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
-;    |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst7                         ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
-;    |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst8                         ; work         ;
-;       |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
-;       |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
-;       |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |8-Bit-Register|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
+; |RamCell-16B                      ; 733 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 50   ; 0            ; |RamCell-16B                                                               ; work         ;
+;    |8-Bit-Register:inst10|        ; 41 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10                                         ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst13                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst21                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst22                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst32                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst41                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst64                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst7                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst8                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst10|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
+;    |8-Bit-Register:inst11|        ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11                                         ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst13                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst21                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst22                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst32                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst41                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst64                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst7                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst8                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst11|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
+;    |8-Bit-Register:inst12|        ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12                                         ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst13                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst21                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst22                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst32                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst41                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst64                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst7                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst8                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst12|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
+;    |8-Bit-Register:inst13|        ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13                                         ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst13                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst21                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst22                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst32                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst41                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst64                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst7                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst8                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst13|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
+;    |8-Bit-Register:inst14|        ; 41 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14                                         ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst13                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst21                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst22                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst32                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst41                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst64                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst7                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst8                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst14|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
+;    |8-Bit-Register:inst15|        ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15                                         ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst13                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst13|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst13|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst13|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst21                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst21|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst21|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst21|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst22                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst22|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst22|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst22|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst32                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst32|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst32|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst32|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst41                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst41|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst41|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst41|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst64                        ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst64|Nand3-primitive:inst13 ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst64|Nand3-primitive:inst14 ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst64|Nand3-primitive:inst9  ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst7                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst7|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst7|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst7|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst8                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst8|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst8|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst15|DFlipFlop:inst8|Nand3-primitive:inst9   ; work         ;
+;    |8-Bit-Register:inst1|         ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst1|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst2|         ; 41 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst2|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst3|         ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst3|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst4|         ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst4|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst5|         ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst5|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst6|         ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst6|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst7|         ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst7|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst8|         ; 41 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst8|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst9|         ; 41 (1)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9                                          ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst13                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst13|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst13|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst13|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst21                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst21|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst21|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst21|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst22                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst22|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst22|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst22|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst32                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst32|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst32|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst32|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst41                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst41|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst41|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst41|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst64                         ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst64|Nand3-primitive:inst13  ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst64|Nand3-primitive:inst14  ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst64|Nand3-primitive:inst9   ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst7                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst7|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst7|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst7|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst8                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst8|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst8|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst9|DFlipFlop:inst8|Nand3-primitive:inst9    ; work         ;
+;    |8-Bit-Register:inst|          ; 128 (88)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst                                           ; work         ;
+;       |DFlipFlop:inst13|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst13                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst13|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst13|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst13|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst21|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst21                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst21|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst21|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst21|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst22|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst22                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst22|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst22|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst22|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst32|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst32                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst32|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst32|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst32|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst41|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst41                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst41|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst41|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst41|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst64|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst64                          ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst64|Nand3-primitive:inst13   ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst64|Nand3-primitive:inst14   ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst64|Nand3-primitive:inst9    ; work         ;
+;       |DFlipFlop:inst7|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst7                           ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst7|Nand3-primitive:inst13    ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst7|Nand3-primitive:inst14    ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst7|Nand3-primitive:inst9     ; work         ;
+;       |DFlipFlop:inst8|           ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst8                           ; work         ;
+;          |Nand3-primitive:inst13| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst8|Nand3-primitive:inst13    ; work         ;
+;          |Nand3-primitive:inst14| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst8|Nand3-primitive:inst14    ; work         ;
+;          |Nand3-primitive:inst9|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RamCell-16B|8-Bit-Register:inst|DFlipFlop:inst8|Nand3-primitive:inst9     ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                ;
-+--------------------------------------------------------+----+
-; Logic Cell Name                                        ;    ;
-+--------------------------------------------------------+----+
-; DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0         ;    ;
-; DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0         ;    ;
-; DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0         ;    ;
-; DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0         ;    ;
-; DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0         ;    ;
-; DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0         ;    ;
-; DFlipFlop:inst7|Nand3-primitive:inst9|inst2~0          ;    ;
-; DFlipFlop:inst8|Nand3-primitive:inst9|inst2~0          ;    ;
-; DFlipFlop:inst21|Nand3-primitive:inst13|inst2~0        ;    ;
-; DFlipFlop:inst21|Nand3-primitive:inst14|inst2~0        ;    ;
-; DFlipFlop:inst22|Nand3-primitive:inst13|inst2~0        ;    ;
-; DFlipFlop:inst22|Nand3-primitive:inst14|inst2~0        ;    ;
-; DFlipFlop:inst13|Nand3-primitive:inst13|inst2~0        ;    ;
-; DFlipFlop:inst13|Nand3-primitive:inst14|inst2~0        ;    ;
-; DFlipFlop:inst41|Nand3-primitive:inst13|inst2~0        ;    ;
-; DFlipFlop:inst41|Nand3-primitive:inst14|inst2~0        ;    ;
-; DFlipFlop:inst64|Nand3-primitive:inst13|inst2~0        ;    ;
-; DFlipFlop:inst64|Nand3-primitive:inst14|inst2~0        ;    ;
-; DFlipFlop:inst32|Nand3-primitive:inst13|inst2~0        ;    ;
-; DFlipFlop:inst32|Nand3-primitive:inst14|inst2~0        ;    ;
-; DFlipFlop:inst7|Nand3-primitive:inst13|inst2~0         ;    ;
-; DFlipFlop:inst7|Nand3-primitive:inst14|inst2~0         ;    ;
-; DFlipFlop:inst8|Nand3-primitive:inst13|inst2~0         ;    ;
-; DFlipFlop:inst8|Nand3-primitive:inst14|inst2~0         ;    ;
-; Number of logic cells representing combinational loops ; 24 ;
-+--------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
++----------------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                               ;
++----------------------------------------------------------------------+-----+
+; Logic Cell Name                                                      ;     ;
++----------------------------------------------------------------------+-----+
+; 8-Bit-Register:inst|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst4|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst5|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst6|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst7|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst8|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst9|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst10|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst11|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst12|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst13|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst14|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst15|DFlipFlop:inst21|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst4|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst5|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst6|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst7|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst8|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst9|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst10|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst11|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst12|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst13|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst14|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst15|DFlipFlop:inst22|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst4|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst5|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst6|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst7|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst8|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst9|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst10|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst11|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst12|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst13|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst14|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst15|DFlipFlop:inst13|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst4|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst5|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst6|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst7|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst8|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst9|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst10|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst11|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst12|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst13|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst14|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst15|DFlipFlop:inst41|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst4|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst5|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst6|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst7|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst8|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst9|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst10|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst11|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst12|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst13|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst14|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst15|DFlipFlop:inst64|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst4|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst5|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst6|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst7|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst8|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst9|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0  ;     ;
+; 8-Bit-Register:inst10|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst11|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst12|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst13|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst14|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst15|DFlipFlop:inst32|Nand3-primitive:inst9|inst2~0 ;     ;
+; 8-Bit-Register:inst|DFlipFlop:inst7|Nand3-primitive:inst9|inst2~0    ;     ;
+; 8-Bit-Register:inst1|DFlipFlop:inst7|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst2|DFlipFlop:inst7|Nand3-primitive:inst9|inst2~0   ;     ;
+; 8-Bit-Register:inst3|DFlipFlop:inst7|Nand3-primitive:inst9|inst2~0   ;     ;
+; Number of logic cells representing combinational loops               ; 384 ;
++----------------------------------------------------------------------+-----+
+Table restricted to first 100 entries. Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -297,7 +870,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -307,15 +880,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Feb 13 01:02:52 2021
+    Info: Processing started: Sat Feb 13 02:07:40 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8-Bit-Computer -c 8-Bit-Computer
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (12018): Entity "And" will be ignored because it conflicts with Quartus II primitive name
-Info (12021): Found 1 design units, including 1 entities, in source file and.bdf
-Warning (12018): Entity "Or" will be ignored because it conflicts with Quartus II primitive name
-Info (12021): Found 1 design units, including 1 entities, in source file or.bdf
-Warning (12018): Entity "Not" will be ignored because it conflicts with Quartus II primitive name
-Info (12021): Found 1 design units, including 1 entities, in source file not.bdf
+Warning (12019): Can't analyze file -- file And.bdf is missing
+Warning (12019): Can't analyze file -- file Or.bdf is missing
+Warning (12019): Can't analyze file -- file Not.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file and16.bdf
     Info (12023): Found entity 1: And16
 Info (12021): Found 1 design units, including 1 entities, in source file 8-bit-computer.bdf
@@ -325,8 +895,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux.bdf
     Info (12023): Found entity 1: Mux
 Info (12021): Found 1 design units, including 1 entities, in source file dmux.bdf
     Info (12023): Found entity 1: DMux
-Warning (12018): Entity "Xor" will be ignored because it conflicts with Quartus II primitive name
-Info (12021): Found 1 design units, including 1 entities, in source file xor.bdf
+Warning (12019): Can't analyze file -- file Xor.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file or16.bdf
     Info (12023): Found entity 1: Or16
 Info (12021): Found 1 design units, including 1 entities, in source file or8way.bdf
@@ -349,8 +918,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file dmux8wa
     Info (12023): Found entity 1: DMux8Way
 Info (12021): Found 1 design units, including 1 entities, in source file mux8way.bdf
     Info (12023): Found entity 1: Mux8Way
-Warning (12018): Entity "Nand3" will be ignored because it conflicts with Quartus II primitive name
-Info (12021): Found 1 design units, including 1 entities, in source file nand3.bdf
+Warning (12019): Can't analyze file -- file Nand3.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file jkflipflop.bdf
     Info (12023): Found entity 1: JKFlipFlop
 Info (12021): Found 1 design units, including 1 entities, in source file dflipflop.bdf
@@ -359,8 +927,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file simpled
     Info (12023): Found entity 1: SimpleDFlipFlop
 Info (12021): Found 1 design units, including 1 entities, in source file 8-bit-register.bdf
     Info (12023): Found entity 1: 8-Bit-Register
-Info (12021): Found 1 design units, including 1 entities, in source file nand-3.bdf
-    Info (12023): Found entity 1: Nand-3
+Warning (12019): Can't analyze file -- file Nand-3.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file nand3-primitive.bdf
     Info (12023): Found entity 1: Nand3-primitive
 Info (12021): Found 1 design units, including 1 entities, in source file and-primitive.bdf
@@ -371,23 +938,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file not-pri
     Info (12023): Found entity 1: Not-primitive
 Info (12021): Found 1 design units, including 1 entities, in source file xor-primitive.bdf
     Info (12023): Found entity 1: Xor-primitive
-Info (12127): Elaborating entity "8-Bit-Register" for the top level hierarchy
-Info (12128): Elaborating entity "DFlipFlop" for hierarchy "DFlipFlop:inst21"
-Info (12128): Elaborating entity "Nand3-primitive" for hierarchy "DFlipFlop:inst21|Nand3-primitive:inst9"
-Info (12128): Elaborating entity "Not-primitive" for hierarchy "DFlipFlop:inst21|Not-primitive:inst16"
-Info (12128): Elaborating entity "Or-primitive" for hierarchy "Or-primitive:inst60"
-Info (12128): Elaborating entity "And-primitive" for hierarchy "And-primitive:inst62"
+Info (12021): Found 1 design units, including 1 entities, in source file 2to4decoder.bdf
+    Info (12023): Found entity 1: 2To4Decoder
+Info (12021): Found 1 design units, including 1 entities, in source file 4to2encoder.bdf
+    Info (12023): Found entity 1: 4To2Encoder
+Info (12021): Found 1 design units, including 1 entities, in source file ramcell-16b.bdf
+    Info (12023): Found entity 1: RamCell-16B
+Info (12127): Elaborating entity "RamCell-16B" for the top level hierarchy
+Info (12128): Elaborating entity "8-Bit-Register" for hierarchy "8-Bit-Register:inst"
+Info (12128): Elaborating entity "DFlipFlop" for hierarchy "8-Bit-Register:inst|DFlipFlop:inst21"
+Info (12128): Elaborating entity "Nand3-primitive" for hierarchy "8-Bit-Register:inst|DFlipFlop:inst21|Nand3-primitive:inst9"
+Info (12128): Elaborating entity "Not-primitive" for hierarchy "8-Bit-Register:inst|DFlipFlop:inst21|Not-primitive:inst16"
+Info (12128): Elaborating entity "Or-primitive" for hierarchy "8-Bit-Register:inst|Or-primitive:inst60"
+Info (12128): Elaborating entity "And-primitive" for hierarchy "8-Bit-Register:inst|And-primitive:inst62"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 60 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
+Info (21057): Implemented 783 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 42 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 40 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4625 megabytes
-    Info: Processing ended: Sat Feb 13 01:02:53 2021
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21061): Implemented 733 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Sat Feb 13 02:07:44 2021
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
