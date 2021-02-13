@@ -1,5 +1,5 @@
 Flow report for 8-Bit-Computer
-Sat Feb 13 04:19:53 2021
+Sat Feb 13 16:45:28 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sat Feb 13 04:19:53 2021      ;
+; Flow Status                        ; Successful - Sat Feb 13 16:45:28 2021      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; 8-Bit-Computer                             ;
 ; Top-level Entity Name              ; RAM                                        ;
@@ -64,29 +64,31 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/13/2021 04:19:29 ;
+; Start date & time ; 02/13/2021 16:45:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 8-Bit-Computer      ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                     ;
-+-------------------------------------+--------------------------------+----------------+-------------+----------------+
-; Assignment Name                     ; Value                          ; Default Value  ; Entity Name ; Section Id     ;
-+-------------------------------------+--------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 48751580067738.161318996958764 ; --             ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --             ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>         ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --             ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --             ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                           ; --             ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                       ; --             ; RAM         ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --             ; RAM         ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --             ; RAM         ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --             ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; RAM                            ; 8-Bit-Computer ; --          ; --             ;
-+-------------------------------------+--------------------------------+----------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+---------------------------------------+----------------+-------------+----------------+
+; Assignment Name                     ; Value                                 ; Default Value  ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------------+----------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 48751580067738.161323470352628        ; --             ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --             ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>         ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --             ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --             ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                  ; --             ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                              ; --             ; RAM         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --             ; RAM         ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --             ; RAM         ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --             ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --             ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --             ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; RAM                                   ; 8-Bit-Computer ; --          ; --             ;
++-------------------------------------+---------------------------------------+----------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -94,9 +96,9 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4630 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 4997 MB             ; 00:00:08                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4596 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4630 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 4999 MB             ; 00:00:08                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4596 MB             ; 00:00:01                           ;
 ; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4652 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4544 MB             ; 00:00:01                           ;
 ; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:16                           ;

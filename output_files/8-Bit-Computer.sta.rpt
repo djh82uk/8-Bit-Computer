@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for 8-Bit-Computer
-Sat Feb 13 04:19:51 2021
+Sat Feb 13 16:45:25 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -2167,7 +2167,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Feb 13 04:19:48 2021
+    Info: Processing started: Sat Feb 13 16:45:23 2021
 Info: Command: quartus_sta 8-Bit-Computer -c 8-Bit-Computer
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -4230,8 +4230,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 1942 warnings
     Info: Peak virtual memory: 4652 megabytes
-    Info: Processing ended: Sat Feb 13 04:19:51 2021
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Sat Feb 13 16:45:25 2021
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

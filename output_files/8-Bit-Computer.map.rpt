@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 8-Bit-Computer
-Sat Feb 13 04:19:33 2021
+Sat Feb 13 16:45:08 2021
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 13 04:19:33 2021      ;
+; Analysis & Synthesis Status        ; Successful - Sat Feb 13 16:45:08 2021      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; 8-Bit-Computer                             ;
 ; Top-level Entity Name              ; RAM                                        ;
@@ -157,22 +157,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
-; DFlipFlop.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/DFlipFlop.bdf       ;         ;
-; 8-Bit-Register.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/8-Bit-Register.bdf  ;         ;
-; Nand3-primitive.bdf              ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Nand3-primitive.bdf ;         ;
-; And-primitive.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/And-primitive.bdf   ;         ;
-; Or-primitive.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Or-primitive.bdf    ;         ;
-; Not-primitive.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Not-primitive.bdf   ;         ;
-; RamCell-16B.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/RamCell-16B.bdf     ;         ;
-; RAM.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/RAM.bdf             ;         ;
-; And4-primitive.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/And4-primitive.bdf  ;         ;
-; Tri8.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Tri8.bdf            ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+; Components/RamCell-16B.bdf       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Components/RamCell-16B.bdf     ;         ;
+; Components/RAM.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Components/RAM.bdf             ;         ;
+; Components/8-Bit-Register.bdf    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Components/8-Bit-Register.bdf  ;         ;
+; Intermediates/Tri8.bdf           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Intermediates/Tri8.bdf         ;         ;
+; Intermediates/DFlipFlop.bdf      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Intermediates/DFlipFlop.bdf    ;         ;
+; Primitives/Or-primitive.bdf      ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Primitives/Or-primitive.bdf    ;         ;
+; Primitives/Not-primitive.bdf     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Primitives/Not-primitive.bdf   ;         ;
+; Primitives/Nand3-primitive.bdf   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Primitives/Nand3-primitive.bdf ;         ;
+; Primitives/And-primitive.bdf     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Primitives/And-primitive.bdf   ;         ;
+; Primitives/And4-primitive.bdf    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/djh/Documents/GitHub/8-Bit-Computer/Primitives/And4-primitive.bdf  ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -917,71 +917,78 @@ Table restricted to first 100 entries. Note: All cells listed above may not be p
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Feb 13 04:19:29 2021
+    Info: Processing started: Sat Feb 13 16:45:03 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 8-Bit-Computer -c 8-Bit-Computer
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file and16.bdf
-    Info (12023): Found entity 1: And16
 Info (12021): Found 1 design units, including 1 entities, in source file 8-bit-computer.bdf
     Info (12023): Found entity 1: 8-Bit-Computer
-Warning (12090): Entity "Mux" obtained from "Mux.bdf" instead of from Quartus II megafunction library
-Info (12021): Found 1 design units, including 1 entities, in source file mux.bdf
-    Info (12023): Found entity 1: Mux
-Info (12021): Found 1 design units, including 1 entities, in source file dmux.bdf
-    Info (12023): Found entity 1: DMux
-Warning (12019): Can't analyze file -- file Xor.bdf is missing
-Info (12021): Found 1 design units, including 1 entities, in source file or16.bdf
-    Info (12023): Found entity 1: Or16
-Info (12021): Found 1 design units, including 1 entities, in source file or8way.bdf
-    Info (12023): Found entity 1: Or8Way
-Info (12021): Found 1 design units, including 1 entities, in source file not16.bdf
-    Info (12023): Found entity 1: Not16
-Info (12021): Found 1 design units, including 1 entities, in source file mux16.bdf
-    Info (12023): Found entity 1: Mux16
-Info (12021): Found 1 design units, including 1 entities, in source file mux4way.bdf
-    Info (12023): Found entity 1: Mux4Way
-Info (12021): Found 1 design units, including 1 entities, in source file mux4way16.bdf
-    Info (12023): Found entity 1: Mux4Way16
-Info (12021): Found 1 design units, including 1 entities, in source file mux8way16.bdf
-    Info (12023): Found entity 1: Mux8Way16
-Info (12021): Found 1 design units, including 1 entities, in source file andmuxor.bdf
-    Info (12023): Found entity 1: AndMuxOr
-Info (12021): Found 1 design units, including 1 entities, in source file dmux4way.bdf
-    Info (12023): Found entity 1: DMux4Way
-Info (12021): Found 1 design units, including 1 entities, in source file dmux8way.bdf
-    Info (12023): Found entity 1: DMux8Way
-Info (12021): Found 1 design units, including 1 entities, in source file mux8way.bdf
-    Info (12023): Found entity 1: Mux8Way
-Info (12021): Found 1 design units, including 1 entities, in source file jkflipflop.bdf
-    Info (12023): Found entity 1: JKFlipFlop
-Info (12021): Found 1 design units, including 1 entities, in source file dflipflop.bdf
-    Info (12023): Found entity 1: DFlipFlop
-Info (12021): Found 1 design units, including 1 entities, in source file simpledflipflop.bdf
-    Info (12023): Found entity 1: SimpleDFlipFlop
-Info (12021): Found 1 design units, including 1 entities, in source file 8-bit-register.bdf
-    Info (12023): Found entity 1: 8-Bit-Register
-Info (12021): Found 1 design units, including 1 entities, in source file nand3-primitive.bdf
-    Info (12023): Found entity 1: Nand3-primitive
-Info (12021): Found 1 design units, including 1 entities, in source file and-primitive.bdf
-    Info (12023): Found entity 1: And-primitive
-Info (12021): Found 1 design units, including 1 entities, in source file or-primitive.bdf
-    Info (12023): Found entity 1: Or-primitive
-Info (12021): Found 1 design units, including 1 entities, in source file not-primitive.bdf
-    Info (12023): Found entity 1: Not-primitive
-Info (12021): Found 1 design units, including 1 entities, in source file xor-primitive.bdf
-    Info (12023): Found entity 1: Xor-primitive
-Info (12021): Found 1 design units, including 1 entities, in source file 2to4decoder.bdf
-    Info (12023): Found entity 1: 2To4Decoder
-Info (12021): Found 1 design units, including 1 entities, in source file 4to2encoder.bdf
-    Info (12023): Found entity 1: 4To2Encoder
-Info (12021): Found 1 design units, including 1 entities, in source file ramcell-16b.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file components/ramcell-16b.bdf
     Info (12023): Found entity 1: RamCell-16B
-Info (12021): Found 1 design units, including 1 entities, in source file ram.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file components/ram.bdf
     Info (12023): Found entity 1: RAM
-Info (12021): Found 1 design units, including 1 entities, in source file and4-primitive.bdf
-    Info (12023): Found entity 1: And4-primitive
-Info (12021): Found 1 design units, including 1 entities, in source file tri8.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file components/8-bit-register.bdf
+    Info (12023): Found entity 1: 8-Bit-Register
+Info (12021): Found 1 design units, including 1 entities, in source file components/1mhz_clock.bdf
+    Info (12023): Found entity 1: 1mhz_clock
+Info (12021): Found 1 design units, including 1 entities, in source file 50mhz clock divider/divby10.bdf
+    Info (12023): Found entity 1: divby10
+Info (12021): Found 1 design units, including 1 entities, in source file 50mhz clock divider/divby5.bdf
+    Info (12023): Found entity 1: divby5
+Info (12021): Found 1 design units, including 1 entities, in source file 50mhz clock divider/divby2.bdf
+    Info (12023): Found entity 1: divby2
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/tri8.bdf
     Info (12023): Found entity 1: Tri8
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/simpledflipflop.bdf
+    Info (12023): Found entity 1: SimpleDFlipFlop
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/or16.bdf
+    Info (12023): Found entity 1: Or16
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/or8way.bdf
+    Info (12023): Found entity 1: Or8Way
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/not16.bdf
+    Info (12023): Found entity 1: Not16
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/mux16.bdf
+    Info (12023): Found entity 1: Mux16
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/mux8way16.bdf
+    Info (12023): Found entity 1: Mux8Way16
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/mux8way.bdf
+    Info (12023): Found entity 1: Mux8Way
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/mux4way16.bdf
+    Info (12023): Found entity 1: Mux4Way16
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/mux4way.bdf
+    Info (12023): Found entity 1: Mux4Way
+Warning (12090): Entity "Mux" obtained from "Intermediates/Mux.bdf" instead of from Quartus II megafunction library
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/mux.bdf
+    Info (12023): Found entity 1: Mux
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/jkflipflop.bdf
+    Info (12023): Found entity 1: JKFlipFlop
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/dmux8way.bdf
+    Info (12023): Found entity 1: DMux8Way
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/dmux4way.bdf
+    Info (12023): Found entity 1: DMux4Way
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/dmux.bdf
+    Info (12023): Found entity 1: DMux
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/dflipflop.bdf
+    Info (12023): Found entity 1: DFlipFlop
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/andmuxor.bdf
+    Info (12023): Found entity 1: AndMuxOr
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/and16.bdf
+    Info (12023): Found entity 1: And16
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/4to2encoder.bdf
+    Info (12023): Found entity 1: 4To2Encoder
+Info (12021): Found 1 design units, including 1 entities, in source file intermediates/2to4decoder.bdf
+    Info (12023): Found entity 1: 2To4Decoder
+Info (12021): Found 1 design units, including 1 entities, in source file primitives/xor-primitive.bdf
+    Info (12023): Found entity 1: Xor-primitive
+Info (12021): Found 1 design units, including 1 entities, in source file primitives/or-primitive.bdf
+    Info (12023): Found entity 1: Or-primitive
+Info (12021): Found 1 design units, including 1 entities, in source file primitives/not-primitive.bdf
+    Info (12023): Found entity 1: Not-primitive
+Info (12021): Found 1 design units, including 1 entities, in source file primitives/nand3-primitive.bdf
+    Info (12023): Found entity 1: Nand3-primitive
+Info (12021): Found 1 design units, including 1 entities, in source file primitives/and-primitive.bdf
+    Info (12023): Found entity 1: And-primitive
+Info (12021): Found 1 design units, including 1 entities, in source file primitives/and4-primitive.bdf
+    Info (12023): Found entity 1: And4-primitive
 Info (12127): Elaborating entity "RAM" for the top level hierarchy
 Info (12128): Elaborating entity "RamCell-16B" for hierarchy "RamCell-16B:inst"
 Info (12128): Elaborating entity "Tri8" for hierarchy "RamCell-16B:inst|Tri8:inst16"
@@ -999,9 +1006,9 @@ Info (21057): Implemented 796 device resources after synthesis - the final resou
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 772 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4641 megabytes
-    Info: Processing ended: Sat Feb 13 04:19:34 2021
+    Info: Processing ended: Sat Feb 13 16:45:08 2021
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
