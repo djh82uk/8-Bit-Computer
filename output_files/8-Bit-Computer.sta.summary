@@ -2,4 +2,40 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Recovery 'A0'
+Slack : -3.686
+TNS   : -33.982
+
+Type  : Slow 1200mV 85C Model Removal 'A0'
+Slack : -0.414
+TNS   : -3.048
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'A0'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Recovery 'A0'
+Slack : -3.206
+TNS   : -29.186
+
+Type  : Slow 1200mV 0C Model Removal 'A0'
+Slack : -0.367
+TNS   : -2.676
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'A0'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Recovery 'A0'
+Slack : -1.736
+TNS   : -12.314
+
+Type  : Fast 1200mV 0C Model Removal 'A0'
+Slack : -0.228
+TNS   : -1.741
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'A0'
+Slack : -3.000
+TNS   : -3.264
+
 ------------------------------------------------------------
