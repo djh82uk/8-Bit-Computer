@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY RAM
+set_global_assignment -name TOP_LEVEL_ENTITY "8-Bit-Computer"
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:42:27  FEBRUARY 12, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
@@ -49,43 +49,44 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name BDF_FILE "8-Bit-Computer.bdf"
-set_global_assignment -name BDF_FILE "Components/RamCell-16B.bdf"
-set_global_assignment -name BDF_FILE Components/RAM.bdf
-set_global_assignment -name BDF_FILE "Components/8-Bit-Register.bdf"
-set_global_assignment -name BDF_FILE Components/1mhz_clock.bdf
-set_global_assignment -name BDF_FILE "50Mhz Clock Divider/divby10.bdf"
-set_global_assignment -name BDF_FILE "50Mhz Clock Divider/divby5.bdf"
-set_global_assignment -name BDF_FILE "50Mhz Clock Divider/divby2.bdf"
-set_global_assignment -name BDF_FILE Intermediates/Tri8.bdf
-set_global_assignment -name BDF_FILE Intermediates/SimpleDFlipFlop.bdf
-set_global_assignment -name BDF_FILE Intermediates/Or16.bdf
-set_global_assignment -name BDF_FILE Intermediates/Or8Way.bdf
-set_global_assignment -name BDF_FILE Intermediates/Not16.bdf
-set_global_assignment -name BDF_FILE Intermediates/Mux16.bdf
-set_global_assignment -name BDF_FILE Intermediates/Mux8Way16.bdf
-set_global_assignment -name BDF_FILE Intermediates/Mux8Way.bdf
-set_global_assignment -name BDF_FILE Intermediates/Mux4Way16.bdf
-set_global_assignment -name BDF_FILE Intermediates/Mux4Way.bdf
-set_global_assignment -name BDF_FILE Intermediates/Mux.bdf
-set_global_assignment -name BDF_FILE Intermediates/JKFlipFlop.bdf
-set_global_assignment -name BDF_FILE Intermediates/DMux8Way.bdf
-set_global_assignment -name BDF_FILE Intermediates/DMux4Way.bdf
-set_global_assignment -name BDF_FILE Intermediates/DMux.bdf
-set_global_assignment -name BDF_FILE Intermediates/DFlipFlop.bdf
-set_global_assignment -name BDF_FILE Intermediates/AndMuxOr.bdf
-set_global_assignment -name BDF_FILE Intermediates/And16.bdf
-set_global_assignment -name BDF_FILE Intermediates/4To2Encoder.bdf
-set_global_assignment -name BDF_FILE Intermediates/2To4Decoder.bdf
-set_global_assignment -name BDF_FILE "Primitives/Xor-primitive.bdf"
-set_global_assignment -name BDF_FILE "Primitives/Or-primitive.bdf"
-set_global_assignment -name BDF_FILE "Primitives/Not-primitive.bdf"
-set_global_assignment -name BDF_FILE "Primitives/Nand3-primitive.bdf"
-set_global_assignment -name BDF_FILE "Primitives/And-primitive.bdf"
-set_global_assignment -name BDF_FILE "Primitives/And4-primitive.bdf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SEARCH_PATH "c:\\users\\djh\\documents\\github\\8-bit-computer\\library"
+set_global_assignment -name BDF_FILE "Library/Primitives/Xor-primitive.bdf"
+set_global_assignment -name BDF_FILE "Library/Primitives/Or-primitive.bdf"
+set_global_assignment -name BDF_FILE "Library/Primitives/Not-primitive.bdf"
+set_global_assignment -name BDF_FILE "Library/Primitives/Nand3-primitive.bdf"
+set_global_assignment -name BDF_FILE "Library/Primitives/And-primitive.bdf"
+set_global_assignment -name BDF_FILE "Library/Primitives/And4-primitive.bdf"
+set_global_assignment -name BDF_FILE Library/Intermediates/Tri8.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/SimpleDFlipFlop.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Or16.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Or8Way.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Not16.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Mux16.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Mux8Way16.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Mux8Way.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Mux4Way16.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Mux4Way.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/Mux.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/JKFlipFlop.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/DMux8Way.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/DMux4Way.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/DMux.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/DFlipFlop.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/AndMuxOr.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/And16.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/4To2Encoder.bdf
+set_global_assignment -name BDF_FILE Library/Intermediates/2To4Decoder.bdf
+set_global_assignment -name BDF_FILE "Library/Components/RamCell-16B.bdf"
+set_global_assignment -name BDF_FILE Library/Components/RAM.bdf
+set_global_assignment -name BDF_FILE "Library/Components/8-Bit-Register.bdf"
+set_global_assignment -name BDF_FILE Library/Components/1mhz_clock.bdf
+set_global_assignment -name BDF_FILE "Library/50Mhz Clock Divider/divby10.bdf"
+set_global_assignment -name BDF_FILE "Library/50Mhz Clock Divider/divby5.bdf"
+set_global_assignment -name BDF_FILE "Library/50Mhz Clock Divider/divby2.bdf"
+set_global_assignment -name BDF_FILE "8-Bit-Computer.bdf"
