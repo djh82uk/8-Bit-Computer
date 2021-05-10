@@ -93,30 +93,50 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name BDF_FILE Library/Components/10HzClock.bdf
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO4
+set_location_assignment PIN_M1 -to AI0
+set_location_assignment PIN_T8 -to AI1
+set_location_assignment PIN_B9 -to AI2
+set_location_assignment PIN_M15 -to AI3
+set_location_assignment PIN_T11 -to AI4
+set_location_assignment PIN_R11 -to AI5
+set_location_assignment PIN_T10 -to AI6
+set_location_assignment PIN_P9 -to AI7
+set_location_assignment PIN_J15 -to AIE
+set_location_assignment PIN_A15 -to AO0
+set_location_assignment PIN_A13 -to AO1
+set_location_assignment PIN_B13 -to AO2
+set_location_assignment PIN_A11 -to AO3
+set_location_assignment PIN_D1 -to AO4
+set_location_assignment PIN_F3 -to AO5
+set_location_assignment PIN_B1 -to AO6
+set_location_assignment PIN_L3 -to AO7
+set_location_assignment PIN_E1 -to AOE
+set_location_assignment PIN_R8 -to CLKInput
+set_global_assignment -name VERILOG_FILE "Library/Verilog Components/8-Bit Register.v"
+set_global_assignment -name VERILOG_FILE "Library/Verilog Components/8-Bit Tri-State Buffer.v"
+set_global_assignment -name SEARCH_PATH "c:\\users\\djh82\\onedrive\\documents\\github\\8-bit-computer\\fpga implementation\\library\\verilog components"
 set_global_assignment -name SEARCH_PATH "c:\\users\\djh82\\onedrive\\documents\\github\\8-bit-computer\\fpga implementation\\library\\primitives"
 set_global_assignment -name SEARCH_PATH "c:\\users\\djh82\\onedrive\\documents\\github\\8-bit-computer\\fpga implementation\\library\\intermediates"
 set_global_assignment -name SEARCH_PATH "c:\\users\\djh82\\onedrive\\documents\\github\\8-bit-computer\\fpga implementation\\library\\components"
 set_global_assignment -name SEARCH_PATH "c:\\users\\djh82\\onedrive\\documents\\github\\8-bit-computer\\fpga implementation\\library\\50mhz clock divider"
 set_global_assignment -name SEARCH_PATH "c:\\users\\djh\\documents\\github\\8-bit-computer\\library"
-set_instance_assignment -name IO_STANDARD "1.2 V" -to AO4
-set_location_assignment PIN_A2 -to AI0
-set_location_assignment PIN_A3 -to AI1
-set_location_assignment PIN_A4 -to AI2
-set_location_assignment PIN_A5 -to AI3
-set_location_assignment PIN_A6 -to AI4
-set_location_assignment PIN_A7 -to AI5
-set_location_assignment PIN_A8 -to AI6
-set_location_assignment PIN_A9 -to AI7
-set_location_assignment PIN_A10 -to AIE
-set_location_assignment PIN_C1 -to AO0
-set_location_assignment PIN_C2 -to AO1
-set_location_assignment PIN_C3 -to AO2
-set_location_assignment PIN_C6 -to AO3
-set_location_assignment PIN_C8 -to AO4
-set_location_assignment PIN_C9 -to AO5
-set_location_assignment PIN_C11 -to AO6
-set_location_assignment PIN_C14 -to AO7
-set_location_assignment PIN_B10 -to AOE
-set_location_assignment PIN_B9 -to CLKInput
-set_location_assignment PIN_B11 -to CLR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AI7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AIE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AO7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AOE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLKInput
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
